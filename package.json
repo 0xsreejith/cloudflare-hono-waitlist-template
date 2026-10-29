@@ -1,0 +1,17 @@
+{
+  "name": "waitlist-app",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "bun run --bun astro dev",
+    "build": "bun run --bun astro build",
+    "preview": "bun run --bun astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.4.4"
+  }
+}
