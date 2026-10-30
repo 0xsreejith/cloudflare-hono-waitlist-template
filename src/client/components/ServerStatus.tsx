@@ -7,16 +7,16 @@ export const ServerStatus = () => {
     fetch("/api/health")
       .then((res) => res.json())
       .then((data) => setStatus(data))
-      .catch(() => setStatus("Offline ❌"));    
+      .catch(() => setStatus("Offline ❌"));
   }, []);
 
   return (
     // <div className="badge badge-outline">
-    //   Server: {status} 
+    //   Server: {status}
     // </div>
     <div>
-        <h2 className="text-lg text-center ">Server Status </h2>
-        <p className="text-center text-sm text-green-500 ">Online 🎉</p>
+      <h2 className="text-center text-lg">Server Status</h2>
+      <p className="text-center text-sm text-green-500">{status}</p>
     </div>
   );
 };

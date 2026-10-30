@@ -8,5 +8,11 @@ export default {
         parser: "astro",
       },
     },
+    {
+      files: ["wrangler.jsonc", "*.jsonc"],
+      options: {
+        trailingComma: "none",
+      },
+    },
   ],
 };
