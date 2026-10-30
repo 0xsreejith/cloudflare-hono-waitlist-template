@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import { Signup } from "../components/Signup";
 import Card from "../components/Card.astro";
-
+import ServerStatus from "../components/ServerStatus";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -11,8 +11,9 @@ import Card from "../components/Card.astro";
 <Layout>
   <Hero />
   <div class="flex justify-center p-4">
-    <Signup />
+    <Signup client:load/>
   </div>
+  <ServerStatus client:only="react"/>
   <div class="flex flex-wrap justify-center gap-6 p-4">
     <Card
       title="Get Interview Ready"

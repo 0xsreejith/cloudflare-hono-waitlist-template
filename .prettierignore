@@ -2,4 +2,6 @@ dist/
 .astro/
 node_modules/
 bun.lock
+.wrangler/
+
 
