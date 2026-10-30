@@ -11,5 +11,8 @@
     "astro",
     "typescript",
     "typescriptreact"
-  ]
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }

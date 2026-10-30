@@ -7,6 +7,13 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+	"d1_databases": [
+		{
+			"binding": "stging_db",
+			"database_name": "local_db",
+			"database_id": "123"
+		}
+	],
 	"workers_dev": true,
 	"env": {
 		"staging": {
@@ -23,7 +30,7 @@
 					"database_id": "ba3f19f9-9732-441e-9604-0c1f55a55076"
 				}
 			]
-		}, 
+		},
 		"production": {
 			"workers_dev": true,
 			"vars": {
@@ -31,5 +38,4 @@
 			}
 		}
 	},
-	
 }
