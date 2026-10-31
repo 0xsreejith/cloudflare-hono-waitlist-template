@@ -18,13 +18,17 @@
     "dryrun:staging": "bun run build:client && wrangler deploy --dry-run --env staging",
     "dryrun:prod": "bun run build:client && wrangler deploy --dry-run --env production",
     "deploy:staging": "bun run build:client && wrangler deploy --env staging",
-    "deploy:prod": "bun run build:client && wrangler deploy --env production"
+    "deploy:prod": "bun run build:client && wrangler deploy --env production",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply stging_db  --local",
+    "db:migrate:staging": "wrangler d1 migrations apply stging_db  --remote --env staging"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.2",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.4.4",
     "concurrently": "^10.0.6",
+    "drizzle-orm": "^0.45.4",
     "hono": "^4.13.14",
     "jose": "^6.2.14",
     "lucide-react": "^1.64.0",
@@ -33,10 +37,13 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261031.1",
     "@eslint/js": "^10.0.1",
+    "@types/bun": "^1.4.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "daisyui": "^5.7.50",
+    "drizzle-kit": "^0.31.11",
     "eslint": "^10.13.0",
     "eslint-plugin-astro": "^3.2.1",
     "globals": "^17.13.0",

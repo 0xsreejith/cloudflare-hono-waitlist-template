@@ -1,41 +1,43 @@
 {
-	// Top-level configuration
-	"name": "waitlist-app",
-	"compatibility_date": "2026-10-23",
-	"main": "src/server/index.ts",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"d1_databases": [
-		{
-			"binding": "stging_db",
-			"database_name": "local_db",
-			"database_id": "123"
-		}
-	],
-	"workers_dev": true,
-	"env": {
-		"staging": {
-			"workers_dev": true,
-			"vars": {
-				"ENVIRONMENT": "staging",
-				"CF_ACCESS_DOMAIN": "https://dry-snow-4159.cloudflareaccess.com",
-				"POLICY_AUD": "e6fca7938e24e0bea2c46b496bc6eb76bfbf2eb4d9d81341c4075d858bc59cd9"
-			},
-			"d1_databases": [
-				{
-					"binding": "stging_db",
-					"database_name": "stging_db",
-					"database_id": "ba3f19f9-9732-441e-9604-0c1f55a55076"
-				}
-			]
-		},
-		"production": {
-			"workers_dev": true,
-			"vars": {
-				"ENVIRONMENT": "production"
-			}
-		}
-	},
+  // Top-level configuration
+  "name": "waitlist-app",
+  "compatibility_date": "2026-10-23",
+  "main": "src/server/index.ts",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "stging_db",
+      "database_name": "local_db",
+      "database_id": "123",
+      "migrations_dir": "./src/server/db/migrations"
+    }
+  ],
+  "workers_dev": true,
+  "env": {
+    "staging": {
+      "workers_dev": true,
+      "vars": {
+        "ENVIRONMENT": "staging",
+        "CF_ACCESS_DOMAIN": "https://dry-snow-4159.cloudflareaccess.com",
+        "POLICY_AUD": "e6fca7938e24e0bea2c46b496bc6eb76bfbf2eb4d9d81341c4075d858bc59cd9"
+      },
+      "d1_databases": [
+        {
+          "binding": "stging_db",
+          "database_name": "stging_db",
+          "database_id": "ba3f19f9-9732-441e-9604-0c1f55a55076",
+          "migrations_dir": "./src/server/db/migrations"
+        }
+      ]
+    },
+    "production": {
+      "workers_dev": true,
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
 }
